@@ -1,6 +1,7 @@
 const express = require('express');
 const appInsights = require('applicationinsights');
 
+
 // Configuração do Application Insights
 if (process.env.APPLICATIONINSIGHTS_CONNECTION_STRING) {
     appInsights.setup(process.env.APPLICATIONINSIGHTS_CONNECTION_STRING)
