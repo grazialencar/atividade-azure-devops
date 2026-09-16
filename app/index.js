@@ -23,10 +23,10 @@ const port = process.env.PORT || 8080;
 
 // Configuração do Banco de Dados (Os alunos devem preencher as variáveis no Azure WebApp)
 const dbConfig = {
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    server: process.env.DB_SERVER, // Ex: meuserver.database.windows.net
-    database: process.env.DB_NAME,
+    user: process.env.admincp,
+    password: process.env.Fiap2026@,
+    server: process.env.sqlserver-cp5.database.windows.net, // Ex: meuserver.database.windows.net
+    database: process.env.fiap,
     options: {
         encrypt: true, // Necessário para Azure SQL
         trustServerCertificate: false
@@ -41,7 +41,7 @@ app.get('/tema', async (req, res) => {
     try {
         // ALUNOS: Usem a configuração dbConfig para conectar no banco e fazer o SELECT na tabela do tema escolhido!
         await sql.connect(dbConfig);
-        const result = await sql.query`SELECT * FROM NomeDaSuaTabela`; // ALTERAR AQUI!
+        const result = await sql.query`SELECT * FROM MUSICAS`; // ALTERAR AQUI!
         
         res.json(result.recordset);
     } catch (err) {
